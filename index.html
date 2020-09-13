@@ -2,14 +2,37 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <div width="100%" height="100%">
-    <iframe width="100%" height="100%" frameborder="0" allowfullscreen allow="fullscreen; geolocation" scrolling="no"
-    src="https://script.google.com/macros/s/AKfycbzkef0L1D0efPByQfJnwoznyQ2s2FZbNtM501alTQ8un6fc2oeq/exec"></iframe>
+
+    <div id="titleBar">MelStuff
+    <div id="pageDropdown">
+        <button id="pageButton" onclick="toggleClass()"><i id="buttonIcon" class="fas fa-cloud-sun-rain"></i></button>
+        <ul id="buttonList">
+            <li value="https://script.google.com/macros/s/AKfycbzkef0L1D0efPByQfJnwoznyQ2s2FZbNtM501alTQ8un6fc2oeq/exec"
+                onclick="changeSource(this)">
+                <i class="fas fa-cloud-sun-rain"></i> Weather</li>
+            <li value="https://script.google.com/macros/s/AKfycbxfBgCMWyIvPBjR5GsLp05uVtmEJjp23xSPtB5RMJDoybdFDvk/exec"
+                onclick="changeSource(this)">
+                <i class="fas fa-satellite-dish"></i> Radar</li>
+            <li value="https://script.google.com/macros/s/AKfycbw9_v0jAMeLUb3o7OvHv6LytmPDXjoUnb-B6uWM_qgyqNgClDxK/exec"
+                onclick="changeSource(this)">
+                <i class="fas fa-gas-pump"></i> Fuel</li>
+
+        </ul>
     </div>
+</div>
+<iframe id="pageFrame" frameborder="0" allowfullscreen allow="fullscreen; geolocation" scrolling="no"
+    src="https://script.google.com/macros/s/AKfycbzkef0L1D0efPByQfJnwoznyQ2s2FZbNtM501alTQ8un6fc2oeq/exec">
+</iframe>
+
+<script>
+    function changeSource(element) {
+        let frame = document.getElementById("pageFrame");
+        let buttonIcon = document.getElementById("buttonIcon");
+
 </body>
 
 </html>
