@@ -119,6 +119,7 @@
 
     <script>
         const urlParams = new URLSearchParams(window.location.search);
+        console.log(urlParams);
         if (urlParams.has("view"))
             changeSource(urlParams.get("view").toLowerCase());
 
