@@ -3,138 +3,171 @@
 
 <head>
     <base target="_top">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet" />
 </head>
 
 <body>
     <!-- Begin CodePen Content -->
 
-    <style>
-        html,
-        body {
-            display: flex;
-            flex-flow: column;
-            height: 100%;
-            height: 100%;
-            width: 100%;
-            margin: 0;
-            background-color: #2e2e2e;
-        }
-
-        #titleBar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 5px;
-            height: 50px;
-            color: rgb(143, 143, 143);
-            font-family: Roboto, Charcoal, sans-serif;
-            font-size: 24px;
-            background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, #2e2e2e 95%);
-        }
-
-        #pageFrame {
-            flex-grow: 1;
-        }
-
-        /* Dropdown */
-        #pageDropdown {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-
-        #pageButton {
-            position: relative;
-            border-radius: 5px;
-            width: 25px;
-            height: 25px;
-            font-size: 14px;
-            background: #262626;
-            border: 2px;
-            box-shadow: none;
-            outline: none;
-            cursor: pointer;
-            color: #fff;
-        }
-
-        #buttonList {
-            position: absolute;
-            margin: 0;
-            right: 0;
-            padding: 0;
-            width: 100px;
-            border: 1px solid #262626;
-            border-radius: 5px;
-            background: gray;
-            transform-origin: top;
-            transform: perspective(1000px) rotateX(-90deg);
-            transition: 0.5s;
-        }
-
-        #buttonList.active {
-            transform: perspective(1000px) rotateX(0deg);
-        }
-
-        #buttonList li {
-            display: block;
-            padding: 10px;
-            font-size: 14px;
-            text-align: left;
-            text-decoration: none;
-            background: dimgray;
-            color: black;
-            border-bottom: 1px solid rgba(0, 0, 0, .2);
-            transition: 0.5s;
-        }
-
-        #buttonList li:hover {
-            background: #262626;
-        }
-    </style>
-
-    <div id="titleBar">MelStuff
-        <div id="pageDropdown">
-            <button id="pageButton" onclick="toggleClass()"><i id="buttonIcon"
-                    class="fas fa-cloud-sun-rain"></i></button>
-            <ul id="buttonList">
-                <li value="https://script.google.com/macros/s/AKfycbzkef0L1D0efPByQfJnwoznyQ2s2FZbNtM501alTQ8un6fc2oeq/exec"
-                    onclick="changeSource(this)">
-                    <i class="fas fa-cloud-sun-rain"></i> Weather</li>
-                <li value="https://script.google.com/macros/s/AKfycbxfBgCMWyIvPBjR5GsLp05uVtmEJjp23xSPtB5RMJDoybdFDvk/exec"
-                    onclick="changeSource(this)">
-                    <i class="fas fa-satellite-dish"></i> Radar</li>
-                <li value="https://script.google.com/macros/s/AKfycbw9_v0jAMeLUb3o7OvHv6LytmPDXjoUnb-B6uWM_qgyqNgClDxK/exec"
-                    onclick="changeSource(this)">
-                    <i class="fas fa-gas-pump"></i> Fuel</li>
-
-            </ul>
-        </div>
-    </div>
-    <iframe id="pageFrame" frameborder="0" allowfullscreen allow="fullscreen; geolocation" scrolling="no"
-        src="https://script.google.com/macros/s/AKfycbzkef0L1D0efPByQfJnwoznyQ2s2FZbNtM501alTQ8un6fc2oeq/exec">
-    </iframe>
-
-    <script>
-        function changeSource(element) {
-            let frame = document.getElementById("pageFrame");
-            let buttonIcon = document.getElementById("buttonIcon");
-            let newSrc = element.getAttribute("value");
-            if (newSrc !== frame.getAttribute("src")) {
-                frame.setAttribute("src", newSrc);
-                frame.reload;
-                buttonIcon.className = element.childNodes[1].className;
-                //console.log(element.childNodes);
+    <!DOCTYPE html>
+    <html>
+    
+    <head>
+        <base target="_top">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet" />
+    </head>
+    
+    <body>
+        <!-- Begin CodePen Content -->
+    
+        <style>
+            html,
+            body {
+                display: flex;
+                flex-flow: column;
+                height: 100%;
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                background-color: #2e2e2e;
             }
-            toggleClass();
-        }
-
-        function toggleClass() {
-            let list = document.getElementById("buttonList");
-            list.classList.toggle("active");
-        }
-    </script>
+    
+            #titleBar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 70px;
+                color: rgb(143, 143, 143);
+                font-family: Roboto, Charcoal, sans-serif;
+                font-size: 24px;
+                background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    
+    
+            }
+    
+            #pageTitle {
+                position: absolute;
+                left: 20px;
+                top: 10px;
+            }
+    
+            #pageFrame {
+                flex-grow: 1;
+            }
+    
+            /* Dropdown */
+            #pageDropdown {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+            }
+    
+            #pageButton {
+                position: relative;
+                border-radius: 5px;
+                width: 25px;
+                height: 25px;
+                font-size: 14px;
+                background: #262626;
+                border: 2px;
+                box-shadow: none;
+                outline: none;
+                cursor: pointer;
+                color: #fff;
+            }
+    
+            #buttonList {
+                position: absolute;
+                margin: 0;
+                right: 0;
+                padding: 0;
+                width: 100px;
+                border: 1px solid #262626;
+                border-radius: 5px;
+                background: gray;
+                transform-origin: top;
+                transform: perspective(1000px) rotateX(-90deg);
+                transition: 0.5s;
+            }
+    
+            #buttonList.active {
+                transform: perspective(1000px) rotateX(0deg);
+            }
+    
+            #buttonList li {
+                display: block;
+                padding: 10px;
+                font-size: 14px;
+                text-align: left;
+                text-decoration: none;
+                background: dimgray;
+                color: black;
+                border-bottom: 1px solid rgba(0, 0, 0, .2);
+                transition: 0.5s;
+            }
+    
+            #buttonList li:hover {
+                background: #262626;
+            }
+        </style>
+    
+        <div id="titleBar">
+            <span id="pageTitle">MelStuff</span>
+            <div id="pageDropdown">
+                <button id="pageButton" onclick="toggleClass()"><i id="buttonIcon"
+                        class="fas fa-cloud-sun-rain"></i></button>
+                <ul id="buttonList">
+                    <li onclick="changeSource('weather')"> <i class="fas fa-cloud-sun-rain"></i> Weather</li>
+                    <li onclick="changeSource('radar')"> <i class="fas fa-satellite-dish"></i> Radar</li>
+                    <li onclick="changeSource('fuel')"> <i class="fas fa-gas-pump"></i> Fuel</li>
+                </ul>
+            </div>
+        </div>
+        <iframe id="pageFrame" frameborder="0" allowfullscreen allow="fullscreen; geolocation" scrolling="no"
+            src="https://script.google.com/macros/s/AKfycbzkef0L1D0efPByQfJnwoznyQ2s2FZbNtM501alTQ8un6fc2oeq/exec">
+        </iframe>
+    
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has("view"))
+                changeSource(urlParams.get("view").toLowerCase());
+    
+            var contentMap = new Map();
+            contentMap.set("weather", "https://script.google.com/macros/s/AKfycbzkef0L1D0efPByQfJnwoznyQ2s2FZbNtM501alTQ8un6fc2oeq/exec");
+            contentMap.set("radar", "https://script.google.com/macros/s/AKfycbxfBgCMWyIvPBjR5GsLp05uVtmEJjp23xSPtB5RMJDoybdFDvk/exec");
+            contentMap.set("fuel", "https://script.google.com/macros/s/AKfycbw9_v0jAMeLUb3o7OvHv6LytmPDXjoUnb-B6uWM_qgyqNgClDxK/exec");
+    
+            var iconMap = new Map();
+            iconMap.set("weather", "fas fa-cloud-sun-rain");
+            iconMap.set("radar", "fas fa-satellite-dish");
+            iconMap.set("fuel", "fas fa-gas-pump");
+    
+            function changeSource(newType) {
+                let newSrc = contentMap.get(newType);
+                let newIcon = iconMap.get(newType);
+                let frame = document.getElementById("pageFrame");
+                let buttonIcon = document.getElementById("buttonIcon");
+                if (newSrc !== frame.getAttribute("src")) {
+                    frame.setAttribute("src", newSrc);
+                    frame.reload;
+                    buttonIcon.className = newIcon;
+                }
+                toggleClass();
+            }
+    
+            function toggleClass() {
+                let list = document.getElementById("buttonList");
+                list.classList.toggle("active");
+            }
+        </script>
+    
+    
+        <!-- End CodePen Content -->
+    </body>
+    
+    </html>
 
 
     <!-- End CodePen Content -->
