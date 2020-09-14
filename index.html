@@ -118,11 +118,6 @@
     </iframe>
 
     <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        console.log(urlParams);
-        if (urlParams.has("view"))
-            changeSource(urlParams.get("view").toLowerCase());
-
         var contentMap = new Map();
         contentMap.set("weather", "https://script.google.com/macros/s/AKfycbzkef0L1D0efPByQfJnwoznyQ2s2FZbNtM501alTQ8un6fc2oeq/exec");
         contentMap.set("radar", "https://script.google.com/macros/s/AKfycbxfBgCMWyIvPBjR5GsLp05uVtmEJjp23xSPtB5RMJDoybdFDvk/exec");
@@ -132,6 +127,11 @@
         iconMap.set("weather", "fas fa-cloud-sun-rain");
         iconMap.set("radar", "fas fa-satellite-dish");
         iconMap.set("fuel", "fas fa-gas-pump");
+
+        const urlParams = new URLSearchParams(window.location.search);
+        console.log(urlParams);
+        if (urlParams.has("view"))
+            changeSource(urlParams.get("view").toLowerCase());
 
         function changeSource(newType) {
             let newSrc = contentMap.get(newType);
