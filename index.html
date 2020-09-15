@@ -3,6 +3,9 @@
 
 <head>
     <base target="_top">
+    <title>MelStuff</title>
+    <link rel="icon" href="favicon.ico" type="image/ico" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet" />
 </head>
@@ -55,9 +58,9 @@
         #pageButton {
             position: relative;
             border-radius: 5px;
-            width: 25px;
-            height: 25px;
-            font-size: 14px;
+            width: 54px;
+            height: 32px;
+            font-size: 16px;
             background: #262626;
             border: 2px;
             box-shadow: none;
@@ -105,7 +108,7 @@
         <span id="pageTitle">MelStuff</span>
         <div id="pageDropdown">
             <button id="pageButton" onclick="toggleClass()"><i id="buttonIcon"
-                    class="fas fa-cloud-sun-rain"></i></button>
+                    class="fas fa-cloud-sun-rain"></i>&nbsp;&nbsp;<i id="caret" class="fas fa-caret-down"></i></button>
             <ul id="buttonList">
                 <li onclick="changeSource('weather', true)"> <i class="fas fa-cloud-sun-rain"></i> Weather</li>
                 <li onclick="changeSource('radar', true)"> <i class="fas fa-satellite-dish"></i> Radar</li>
@@ -143,14 +146,17 @@
                 buttonIcon.className = newIcon;
             }
             if (doToggle)
-              toggleClass();
+                toggleClass();
         }
 
         function toggleClass() {
             let list = document.getElementById("buttonList");
             list.classList.toggle("active");
+            let caret = document.getElementById("caret");
+            caret.className = caret.className == "fas fa-caret-up" ? "fas fa-caret-down" : "fas fa-caret-up";
         }
     </script>
+
 
 
     <!-- End CodePen Content -->
