@@ -26,6 +26,7 @@
         }
 
         #titleBar {
+            z-index: 10;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -33,11 +34,9 @@
             color: rgb(143, 143, 143);
             font-family: Roboto, Charcoal, sans-serif;
             font-size: 24px;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-
-
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.7) 70%, rgba(0, 0, 0, 0) 100%);
         }
-
+     
         #pageTitle {
             position: absolute;
             left: 20px;
@@ -46,6 +45,10 @@
 
         #pageFrame {
             flex-grow: 1;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
         }
 
         /* Dropdown */
@@ -155,6 +158,7 @@
             let caret = document.getElementById("caret");
             caret.className = caret.className == "fas fa-caret-up" ? "fas fa-caret-down" : "fas fa-caret-up";
         }
+        
     </script>
 
 
