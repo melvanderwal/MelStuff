@@ -45,8 +45,8 @@
 
         #pageFrame {
             flex-grow: 1;
-            position: absolute;
-            top: 0;
+            /*position: absolute;   uncomment once items can be scrolled under titlebar
+            top: 0;*/
             width: 100%;
             height: 100%;
         }
@@ -123,6 +123,7 @@
         src="https://script.google.com/macros/s/AKfycbzkef0L1D0efPByQfJnwoznyQ2s2FZbNtM501alTQ8un6fc2oeq/exec">
     </iframe>
 
+
     <script>
         var contentMap = new Map();
         contentMap.set("weather", "https://script.google.com/macros/s/AKfycbzkef0L1D0efPByQfJnwoznyQ2s2FZbNtM501alTQ8un6fc2oeq/exec");
@@ -158,7 +159,6 @@
             let caret = document.getElementById("caret");
             caret.className = caret.className == "fas fa-caret-up" ? "fas fa-caret-down" : "fas fa-caret-up";
         }
-        
     </script>
 
 
