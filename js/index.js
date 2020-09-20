@@ -1,5 +1,5 @@
 var contentMap = new Map();
-contentMap.set("weather", "https://script.google.com/macros/s/AKfycbzkef0L1D0efPByQfJnwoznyQ2s2FZbNtM501alTQ8un6fc2oeq/exec?padtop=50");
+contentMap.set("weather", "https://melvanderwal.github.io/Weather/?padtop=50");
 contentMap.set("radar", "https://script.google.com/macros/s/AKfycbxfBgCMWyIvPBjR5GsLp05uVtmEJjp23xSPtB5RMJDoybdFDvk/exec?padtop=45");
 contentMap.set("fuel", "https://script.google.com/macros/s/AKfycbw9_v0jAMeLUb3o7OvHv6LytmPDXjoUnb-B6uWM_qgyqNgClDxK/exec?padtop=45");
 
