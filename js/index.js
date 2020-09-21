@@ -1,7 +1,7 @@
 var contentMap = new Map();
 contentMap.set("weather", "https://melvanderwal.github.io/Weather/?padtop=50");
 contentMap.set("radar", "https://script.google.com/macros/s/AKfycbxfBgCMWyIvPBjR5GsLp05uVtmEJjp23xSPtB5RMJDoybdFDvk/exec?padtop=45");
-contentMap.set("fuel", "https://script.google.com/macros/s/AKfycbw9_v0jAMeLUb3o7OvHv6LytmPDXjoUnb-B6uWM_qgyqNgClDxK/exec?padtop=45");
+contentMap.set("fuel", "https://melvanderwal.github.io/QueenslandFuelPrices/?title=false");
 
 var iconMap = new Map();
 iconMap.set("weather", "fas fa-cloud-sun-rain");
