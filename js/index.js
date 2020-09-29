@@ -1,6 +1,6 @@
 var contentMap = new Map();
 contentMap.set("weather", "https://melvanderwal.github.io/Weather/?padtop=50");
-contentMap.set("radar", "https://script.google.com/macros/s/AKfycbxfBgCMWyIvPBjR5GsLp05uVtmEJjp23xSPtB5RMJDoybdFDvk/exec?padtop=45");
+contentMap.set("radar", "https://melvanderwal.github.io/Radar/?title=false");
 contentMap.set("fuel", "https://melvanderwal.github.io/QueenslandFuelPrices/?title=false");
 
 var iconMap = new Map();
