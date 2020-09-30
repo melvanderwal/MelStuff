@@ -10,6 +10,7 @@ html, body {
 
 #titleBar {
     z-index: 10;
+    pointer-events: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
