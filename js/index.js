@@ -17,8 +17,10 @@ function changeSource(newType, doToggle) {
     let newIcon = iconMap.get(newType);
     let frame = document.getElementById("pageFrame");
     let buttonIcon = document.getElementById("buttonIcon");
-    if (newSrc !== frame.getAttribute("src")) {
-        frame.setAttribute("src", newSrc);
+    //if (newSrc !== frame.getAttribute("src")) {
+    if (newSrc !== frame.contentWindow.location) {
+        //frame.setAttribute("src", newSrc);
+        frame.contentWindow.location.replace(newSrc);
         frame.reload;
         buttonIcon.className = newIcon;
     }
